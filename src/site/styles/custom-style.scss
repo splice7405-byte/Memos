@@ -64,9 +64,15 @@ body {
             transform: translateX(calc(-100% + 15px)) !important;
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
             
-            /* ★ここがエラーの起きていた行です（修正済み） */
             border-right: 4px solid var(--text-accent) !important;
             background-color: var(--background-secondary) !important;
+        }
+
+        /* ★ここを追加：中身の文字や検索バーの幅制限を解除し、枠いっぱいに広げる */
+        .filetree-sidebar {
+            width: 100% !important;
+            max-width: none !important;
+            padding-right: 20px !important; /* スクロールバーや右端との隙間を確保 */
         }
 
         .filetree-wrapper:hover,
@@ -82,6 +88,7 @@ body {
             max-width: 1000px !important; 
         }
     }
+
 
     /* ========================================================
        5. 動画プレイヤーの追従（Sticky）と📍ボタンUI
