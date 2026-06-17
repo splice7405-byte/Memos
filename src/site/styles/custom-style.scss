@@ -13,7 +13,7 @@ body {
         position: relative;
         
         &::after {
-            content: "動画解説置き場"; /* ← 表示したい好きな名前に変更可能です */
+            content: "My Knowledge"; /* ← 表示したい好きな名前に変更可能です */
             visibility: visible;      /* 置き換えた文字を表示 */
             position: absolute;
             left: 0;
@@ -26,55 +26,69 @@ body {
     /* ========================================================
        2. カラーテーマのカスタマイズ（落ち着いた炭黒ベース）
        ======================================================== */
-    /* メインコンテンツ側の背景色（やや赤み・青みを抑えた深いグレー） */
-    --background-primary: #16161a;       
-
-    /* サイドバー・ナビゲーションバーの背景色 */
-    --background-secondary: #1f1f24;     
-
-    /* テキストの色（純白を避けて目の負担を軽減） */
-    --text-normal: #e3e8f0;             /* 本文 */
+    --background-primary: #16161a;       /* メインコンテンツ側の背景色 */
+    --background-secondary: #1f1f24;     /* サイドバー・ナビゲーションバーの背景色 */
+    --text-normal: #e3e8f0;             /* 本文の文字色 */
     --text-muted: #94a3b8;              /* フォルダ名や日付など */
-
-    /* アクセントカラー（アクティブなノートやリンクの色） */
-    /* 好みに応じて、上品なゴールド・アンバー系に設定しています */
-    --text-accent: #f59e0b;       
+    --text-accent: #f59e0b;             /* アクセントカラー（アンバー/琥珀色） */
     --graph-main: #f59e0b;              /* グラフの接続点も連動 */
 
     /* ========================================================
-       3. 全体のフォントとレイアウトの微調整
+       3. 全体のフォントとレイアウトの微調整（スクロールの確保）
        ======================================================== */
-    /* UI全体のフォントを美しく読みやすいシステムフォントに統一 */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-
-    /* ノート本文の横幅を少しだけ広くしてゆとりを持たせる */
     --dg-content-max-width: 760px; 
-
-    /* 本文の文字サイズ（デフォルトの18pxから少し下げてスッキリと） */
     --dg-content-font-size: 16px;  
 
+    /* ページ全体の縦スクロールを確実に有効化する */
+    html, body {
+        scroll-behavior: smooth;
+        overflow-y: auto !important;
+        height: auto !important;
+    }
+
     /* ========================================================
-       4. 画面幅に応じた左サイドバー（ファイルツリー）の自動非表示化
+       4. iPad/タブレット環境（1400px以下）での左バー「出し入れトグル化」
        ======================================================== */
-    /* iPadの横向き（1400px以下）などの環境で、左バーを固定せず自動で隠す */
     @media (max-width: 1400px) {
-        .filetree-wrapper {
-            /* 普段は左側に隠しておく（ Alpine.js 側の制御とバッティングしないよう調整 ） */
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            position: fixed;
-            height: 100vh;
-            z-index: 100;
+        /* 元々あるスマホ用のハンバーガーメニュー・ナビゲーションバーを
+           iPad横向き（1400px以下）でも強制的に表示させる */
+        .navbar {
+            display: flex !important;
         }
 
-        /* 画面の左端にメニュー展開用のトグル（スマホ・タブレット用UI）がある場合、
-           コンテンツエリアを中央に寄せて広く使えるようにする */
+        /* 左のファイルツリーを画面外（左側）に待機させ、トグルボタンと連動させる */
+        .filetree-wrapper {
+            position: fixed !important;
+            top: var(--dg-navbar-height) !important;
+            left: 0 !important;
+            height: calc(100vh - var(--dg-navbar-height)) !important;
+            z-index: 1000 !important;
+            width: var(--dg-filetree-width) !important;
+            
+            /* 標準の非表示クラス（.hide-device など）が当たっている時は画面外へ */
+            transform: translateX(-100%);
+            transition: transform 0.25s ease-in-out;
+            
+            /* ファイルツリー単体でも上下スクロールできるようにする */
+            overflow-y: auto !important;
+        }
+
+        /* テンプレートのJavaScript（Alpine.js）がメニューを開いたときの挙動 */
+        &.show-sidebar .filetree-wrapper,
+        &:has(.filetree-wrapper:not(.hide-device)) .filetree-wrapper {
+            transform: translateX(0);
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 左バーが浮き出る仕様にするため、本文エリアは中央に広々と配置する */
         .content {
             margin-left: auto !important;
             margin-right: auto !important;
             max-width: var(--dg-content-max-width);
             padding-left: 20px;
             padding-right: 20px;
+            padding-top: calc(var(--dg-navbar-height) + 30px) !important;
         }
 
         .content.canvas-page {
