@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/ai-obsidian/","created":"2026-06-18T05:25:52.672+09:00","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/00-inbox/ai-obsidian/","tags":["ジャーナリング","Obsidian","自己分析","ライフハック","生産性"],"created":"2026-06-18T05:25:52.672+09:00","dg-note-properties":{"tags":["ジャーナリング","Obsidian","自己分析","ライフハック","生産性"]}}
 ---
 
 
