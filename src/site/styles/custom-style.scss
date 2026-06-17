@@ -89,36 +89,34 @@ body {
         }
     }
 
-
     /* ========================================================
-       5. 【完全版】動画プレイヤーの追従と絶対比率維持（16:9）
+       5. 【最終版】動画プレイヤーの追従と絶対比率維持（iPad対応）
        ======================================================== */
     .custom-video-wrapper {
         position: relative;
         width: 100%;
-        /* ★これが魔法の数字。16:9の比率（9÷16=0.5625）を強制的に確保します */
-        padding-bottom: 56.25%; 
-        height: 0; /* 高さはpaddingで出すため、ここは0にします */
+        /* ★高さ制限(max-height)をなくし、シンプルに16:9の比率だけを命令 */
+        aspect-ratio: 16 / 9; 
         margin-bottom: 2rem;
         background-color: #000; 
         z-index: 1; 
+        transition: all 0.3s ease;
     }
 
-    /* ★中身の動画を「絶対配置」にして、用意した16:9の枠にピッタリはめ込む */
+    /* ★絶対配置(absolute)を使わず、素直に枠いっぱいに広げるだけ */
     .custom-video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
         border: none;
+        display: block;
     }
 
     .custom-video-wrapper.is-sticky {
         position: sticky;
-        top: 10px; 
-        box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.7); 
-        /* 固定時もpadding-bottomの比率は完璧に維持されます */
+        /* ナビバーとの隙間。必要なら70pxなどに微調整してください */
+        top: 60px; 
+        box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.8); 
+        /* 追従時もアスペクト比が狂わないよう、paddingはあえて削除しました */
     }
 
     .video-pin-btn {
