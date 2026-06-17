@@ -1,0 +1,56 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // ページ内のクリックイベントを監視
+  document.body.addEventListener('click', (e) => {
+    // クリックされた要素がリンク(aタグ)か、その子要素かを確認
+    const target = e.target.closest('a');
+    if (!target) return;
+
+    const href = target.getAttribute('href');
+
+    // YouTubeのタイムスタンプリンク（?t=...）かどうかを判定
+    if (href && (href.includes('youtu.be') || href.includes('youtube.com')) && href.includes('t=')) {
+      
+      // ページ内に埋め込まれたYouTubeプレイヤー(iframe)を取得
+      const iframe = document.getElementById('yt-player');
+      if (!iframe) return;
+
+      // 通常の画面遷移（外部アプリ起動など）をキャンセル
+      e.preventDefault();
+
+      // URLから "?t=〇m〇s" の部分を抽出して秒数に変換するロジック
+      const urlObj = new URL(href);
+      const timeStr = urlObj.searchParams.get('t'); // 例: "1m23s"
+      let seconds = 0;
+
+      if (timeStr) {
+        if (timeStr.includes('m') || timeStr.includes('s')) {
+          // "1m23s" や "45s" のような形式をパース
+          const minMatch = timeStr.match(/(\d+)m/);
+          const secMatch = timeStr.match(/(\d+)s/);
+          const mins = minMatch ? parseInt(minMatch[1], 10) : 0;
+          const secs = secMatch ? parseInt(secMatch[1], 10) : 0;
+          seconds = mins * 60 + secs;
+        } else {
+          // 秒数のみで記述されている場合のフォールバック
+          seconds = parseInt(timeStr, 10);
+        }
+      }
+
+      // iframe内のYouTubeプレイヤーにシーク命令を送信
+      iframe.contentWindow.postMessage(JSON.stringify({
+        event: 'command',
+        func: 'seekTo',
+        args: [seconds, true]
+      }), '*');
+      
+      // シークと同時に自動再生させるコマンド
+      iframe.contentWindow.postMessage(JSON.stringify({
+        event: 'command',
+        func: 'playVideo',
+        args: []
+      }), '*');
+    }
+  });
+});
+</script>
