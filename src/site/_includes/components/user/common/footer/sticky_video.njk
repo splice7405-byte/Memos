@@ -1,0 +1,40 @@
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 画面内のすべての iframe (YouTube動画など) を探す
+    const iframes = document.querySelectorAll('iframe');
+
+    iframes.forEach(iframe => {
+        // iframeを囲む「箱（ラッパー）」を作る
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('custom-video-wrapper');
+        // デフォルトで固定（sticky）をONにする
+        wrapper.classList.add('is-sticky');
+
+        // 動画を新しい箱の中に入れる
+        iframe.parentNode.insertBefore(wrapper, iframe);
+        wrapper.appendChild(iframe);
+
+        // 📍ボタンを作る
+        const btn = document.createElement('button');
+        btn.innerHTML = '📍';
+        btn.classList.add('video-pin-btn');
+        btn.title = '動画の固定/解除';
+
+        // ボタンがタップされた時の動作（ON/OFFの切り替え）
+        btn.addEventListener('click', () => {
+            wrapper.classList.toggle('is-sticky');
+            
+            if (wrapper.classList.contains('is-sticky')) {
+                btn.innerHTML = '📍';          // 固定ON
+                btn.style.opacity = '1';
+            } else {
+                btn.innerHTML = '📌';          // 固定OFF（アイコンを変えて少し薄くする）
+                btn.style.opacity = '0.5';
+            }
+        });
+
+        // 箱の中にボタンを追加
+        wrapper.appendChild(btn);
+    });
+});
+</script>
