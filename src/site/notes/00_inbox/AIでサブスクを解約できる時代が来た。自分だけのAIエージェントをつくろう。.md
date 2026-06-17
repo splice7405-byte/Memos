@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/ai-ai/","tags":["AIエージェント","個人開発","生産性向上","自動化"],"created":"2026-06-17T22:33:42.961+09:00","dg-note-properties":{"tags":["AIエージェント","個人開発","生産性向上","自動化"]}}
+{"dg-publish":true,"permalink":"/00-inbox/ai-ai/","tags":["AIエージェント","個人開発","生産性向上","自動化","スーパーアプリ"],"created":"2026-06-17T22:33:42.961+09:00","dg-note-properties":{"tags":["AIエージェント","個人開発","生産性向上","自動化","スーパーアプリ"]}}
 ---
 
 
