@@ -5,97 +5,83 @@ body {
    ***/
 
     /* ========================================================
-       1. 左上の「Digital Garden」のタイトル変更
+       1. タイトル変更 (確実な文字サイズ置換)
        ======================================================== */
-    .navbar-inner h1, 
     .filetree-sidebar h1 {
-        visibility: hidden;
-        position: relative;
-        
+        font-size: 0 !important; /* 元の文字を消す */
         &::after {
             content: "My Knowledge"; 
-            visibility: visible;      
-            position: absolute;
-            left: 0;
-            top: 0;
-            white-space: nowrap;
+            font-size: var(--dg-filetree-title-size); /* サイズを復元 */
             color: var(--text-normal);
+            display: block;
+        }
+    }
+    .navbar-inner h1 {
+        font-size: 0 !important;
+        &::after {
+            content: "My Knowledge"; 
+            font-size: var(--dg-navbar-title-size-mobile);
+            color: var(--text-normal);
+            display: block;
         }
     }
 
     /* ========================================================
-       2. カラーテーマのカスタマイズ（落ち着いた炭黒ベース）
+       2. ダークテーマ (落ち着いた炭黒ベース)
        ======================================================== */
-    --background-primary: #16161a;       /* メインコンテンツ側の背景色 */
-    --background-secondary: #1f1f24;     /* サイドバー・ナビゲーションバーの背景色 */
-    --text-normal: #e3e8f0;             /* 本文の文字色 */
-    --text-muted: #94a3b8;              /* フォルダ名や日付など */
-    --text-accent: #f59e0b;             /* アクセントカラー（アンバー） */
+    --background-primary: #16161a;       /* 本文の背景 */
+    --background-secondary: #1f1f24;     /* メニューの背景 */
+    --text-normal: #e3e8f0;             
+    --text-muted: #94a3b8;              
+    --text-accent: #f59e0b;             /* アクセント（アンバー） */
     --graph-main: #f59e0b;              
 
     /* ========================================================
-       3. 全体のフォント・スクロール制御
+       3. フォント・本文幅の設定
        ======================================================== */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --dg-content-max-width: 760px; 
     --dg-content-font-size: 16px;  
 
-    /* ページ全体・各ペインのスクロールを100%保証する */
     html, body {
         scroll-behavior: smooth;
-        overflow-y: auto !important;
-        height: auto !important;
     }
 
     /* ========================================================
-       4. iPad/タブレット環境（1400px以下）での左バー完全トグル化（スライド式）
+       4. 【重要】ボタン不要のスライド式ドロワーメニュー
        ======================================================== */
-    @media (max-width: 1400px) {
-        /* 上部のスマホ・タブレット用ナビバーを強制的に常時表示 */
-        .navbar {
-            display: flex !important;
-        }
-
-        /* ――― 左ペイン（ファイルツリー）の強制トグル設定 ――― */
+    @media (min-width: 1001px) and (max-width: 1400px) {
+        
+        /* メニューを画面の左外側に隠し、15pxだけ「取っ手」として残す */
         .filetree-wrapper {
             position: fixed !important;
-            top: var(--dg-navbar-height) !important;
+            top: 0 !important;
             left: 0 !important;
-            height: calc(100vh - var(--dg-navbar-height)) !important;
-            width: var(--dg-filetree-width) !important;
+            height: 100vh !important;
             z-index: 1000 !important;
-            background-color: var(--background-secondary) !important;
-            display: flex !important; /* 強制表示 */
-            overflow-y: auto !important; /* 左ペイン単体でのスクロールを許可 */
             
-            /* 【初期状態】画面の左外側に隠しておく */
-            transform: translateX(-100%) !important;
-            transition: transform 0.25s ease-in-out !important;
+            /* 横幅のほぼ全てをマイナス方向（左）へずらす */
+            transform: translateX(calc(-100% + 15px)) !important;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            
+            /* 取っ手だと分かるように、右端にオレンジの太線を引く */
+            border-right: 4px solid var(--text-accent) !important;
+            background-color: var(--background-secondary) !important;
         }
 
-        /* テンプレートのハンバーガーメニュー展開用クラス（show-sidebar）が
-           body に付与されたときだけ、左ペインを画面内にスライドインさせる */
-        &.show-sidebar .filetree-wrapper {
+        /* 左端の取っ手をタップ（またはホバー）した時にスライドインさせる */
+        .filetree-wrapper:hover,
+        .filetree-wrapper:active,
+        .filetree-wrapper:focus-within {
             transform: translateX(0) !important;
-            box-shadow: 5px 0 25px rgba(0, 0, 0, 0.6) !important;
+            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.8) !important;
         }
 
-        /* ――― 本文（コンテンツ）エリアの配置修正 ――― */
+        /* 左ペインが隠れている分、本文を画面の中央に広く配置する */
         .content {
-            margin-left: auto !important;
+            margin-left: 35px !important; /* 左の取っ手と被らないように余白を確保 */
             margin-right: auto !important;
             max-width: var(--dg-content-max-width) !important;
-            width: calc(100vw - 40px) !important;
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-            /* ナビバーの高さ分、上部に余白を作る */
-            padding-top: calc(var(--dg-navbar-height) + 30px) !important; 
-        }
-
-        .content.canvas-page {
-            margin-left: 20px !important;
-            margin-right: 20px !important;
-            width: calc(100vw - 40px) !important;
         }
     }
 }
