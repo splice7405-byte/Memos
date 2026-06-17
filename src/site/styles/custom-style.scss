@@ -49,9 +49,9 @@ body {
     }
 
     /* ========================================================
-       4. 【重要】ボタン不要のスライド式ドロワーメニュー ＆ 横置きレイアウト
+       4. スライド式ドロワーメニュー (開いた時は画面の半分まで拡張)
        ======================================================== */
-    @media (min-width: 1001px) and (max-width: 1400px) {
+    @media (min-width: 1001px) {
         
         /* メニューを画面の左外側に隠し、15pxだけ「取っ手」として残す */
         .filetree-wrapper {
@@ -59,77 +59,13 @@ body {
             top: 0 !important;
             left: 0 !important;
             height: 100vh !important;
-            z-index: 1000 !important;
+            /* ★サイドバーの横幅を画面の半分（50%）に大胆に広げる */
+            width: 50vw !important; 
+            z-index: 1000 !important; /* 動画プレイヤーよりも必ず手前に出す */
             
-            /* 横幅のほぼ全てをマイナス方向（左）へずらす */
+            /* 横幅のほぼ全て（50vw分）をマイナス方向（左）へずらして隠す */
             transform: translateX(calc(-100% + 15px)) !important;
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
             
             /* 取っ手だと分かるように、右端にオレンジの太線を引く */
-            border-right: 4px solid var(--text-accent) !important;
-            background-color: var(--background-secondary) !important;
-        }
-
-        /* 左端の取っ手をタップ（またはホバー）した時にスライドインさせる */
-        .filetree-wrapper:hover,
-        .filetree-wrapper:active,
-        .filetree-wrapper:focus-within {
-            transform: translateX(0) !important;
-            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.8) !important;
-        }
-
-        /* ★ここが変更箇所です★ 横置き時の本文の配置と幅 */
-        .content {
-            margin-left: 35px !important; /* 左の取っ手と被らないように余白を確保し、左寄せを維持 */
-            margin-right: auto !important;
-            
-            /* 横置きの時だけ、文章の最大幅を 760px → 1000px に拡張して右側の余白を減らす */
-            max-width: 1000px !important; 
-        }
-    }
-
-    /* ========================================================
-       5. 動画プレイヤーの追従（Sticky）と📍ボタンUI
-       ======================================================== */
-    .custom-video-wrapper {
-        position: relative;
-        width: 100%;
-        margin-bottom: 2rem;
-        background-color: var(--background-primary); 
-        z-index: 100; 
-        transition: all 0.3s ease;
-    }
-
-    .custom-video-wrapper.is-sticky {
-        position: sticky;
-        /* ★サイト上部の「My Knowledge」ヘッダーの高さ分、動画がヘッダーの裏に隠れないように隙間を開けます */
-        top: 60px; 
-        box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.7); 
-        padding-top: 10px; 
-        padding-bottom: 15px; 
-    }
-
-    .video-pin-btn {
-        position: absolute;
-        top: -10px;        
-        right: 0px;
-        width: 40px;       
-        height: 40px;
-        background: var(--background-secondary);
-        border: 1px solid var(--text-muted);
-        border-radius: 50%;
-        font-size: 18px;
-        color: var(--text-normal);
-        cursor: pointer;
-        z-index: 101;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-        transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    .video-pin-btn:active {
-        transform: scale(0.9);
-    }
-}
+            border-right: 4px solid var(--text-accent
