@@ -9,12 +9,12 @@ body {
        ======================================================== */
     .navbar-inner h1, 
     .filetree-sidebar h1 {
-        visibility: hidden; /* 元の文字を非表示 */
+        visibility: hidden;
         position: relative;
         
         &::after {
-            content: "My Knowledge"; /* ← 表示したい好きな名前に変更可能です */
-            visibility: visible;      /* 置き換えた文字を表示 */
+            content: "My Knowledge"; 
+            visibility: visible;      
             position: absolute;
             left: 0;
             top: 0;
@@ -30,17 +30,17 @@ body {
     --background-secondary: #1f1f24;     /* サイドバー・ナビゲーションバーの背景色 */
     --text-normal: #e3e8f0;             /* 本文の文字色 */
     --text-muted: #94a3b8;              /* フォルダ名や日付など */
-    --text-accent: #f59e0b;             /* アクセントカラー（アンバー/琥珀色） */
-    --graph-main: #f59e0b;              /* グラフの接続点も連動 */
+    --text-accent: #f59e0b;             /* アクセントカラー（アンバー） */
+    --graph-main: #f59e0b;              
 
     /* ========================================================
-       3. 全体のフォントとレイアウトの微調整（スクロールの確保）
+       3. 全体のフォント・スクロール制御
        ======================================================== */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --dg-content-max-width: 760px; 
     --dg-content-font-size: 16px;  
 
-    /* ページ全体の縦スクロールを確実に有効化する */
+    /* ページ全体・各ペインのスクロールを100%保証する */
     html, body {
         scroll-behavior: smooth;
         overflow-y: auto !important;
@@ -48,52 +48,54 @@ body {
     }
 
     /* ========================================================
-       4. iPad/タブレット環境（1400px以下）での左バー「出し入れトグル化」
+       4. iPad/タブレット環境（1400px以下）での左バー完全トグル化（スライド式）
        ======================================================== */
     @media (max-width: 1400px) {
-        /* 元々あるスマホ用のハンバーガーメニュー・ナビゲーションバーを
-           iPad横向き（1400px以下）でも強制的に表示させる */
+        /* 上部のスマホ・タブレット用ナビバーを強制的に常時表示 */
         .navbar {
             display: flex !important;
         }
 
-        /* 左のファイルツリーを画面外（左側）に待機させ、トグルボタンと連動させる */
+        /* ――― 左ペイン（ファイルツリー）の強制トグル設定 ――― */
         .filetree-wrapper {
             position: fixed !important;
             top: var(--dg-navbar-height) !important;
             left: 0 !important;
             height: calc(100vh - var(--dg-navbar-height)) !important;
-            z-index: 1000 !important;
             width: var(--dg-filetree-width) !important;
+            z-index: 1000 !important;
+            background-color: var(--background-secondary) !important;
+            display: flex !important; /* 強制表示 */
+            overflow-y: auto !important; /* 左ペイン単体でのスクロールを許可 */
             
-            /* 標準の非表示クラス（.hide-device など）が当たっている時は画面外へ */
-            transform: translateX(-100%);
-            transition: transform 0.25s ease-in-out;
-            
-            /* ファイルツリー単体でも上下スクロールできるようにする */
-            overflow-y: auto !important;
+            /* 【初期状態】画面の左外側に隠しておく */
+            transform: translateX(-100%) !important;
+            transition: transform 0.25s ease-in-out !important;
         }
 
-        /* テンプレートのJavaScript（Alpine.js）がメニューを開いたときの挙動 */
-        &.show-sidebar .filetree-wrapper,
-        &:has(.filetree-wrapper:not(.hide-device)) .filetree-wrapper {
-            transform: translateX(0);
-            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+        /* テンプレートのハンバーガーメニュー展開用クラス（show-sidebar）が
+           body に付与されたときだけ、左ペインを画面内にスライドインさせる */
+        &.show-sidebar .filetree-wrapper {
+            transform: translateX(0) !important;
+            box-shadow: 5px 0 25px rgba(0, 0, 0, 0.6) !important;
         }
 
-        /* 左バーが浮き出る仕様にするため、本文エリアは中央に広々と配置する */
+        /* ――― 本文（コンテンツ）エリアの配置修正 ――― */
         .content {
             margin-left: auto !important;
             margin-right: auto !important;
-            max-width: var(--dg-content-max-width);
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: calc(var(--dg-navbar-height) + 30px) !important;
+            max-width: var(--dg-content-max-width) !important;
+            width: calc(100vw - 40px) !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            /* ナビバーの高さ分、上部に余白を作る */
+            padding-top: calc(var(--dg-navbar-height) + 30px) !important; 
         }
 
         .content.canvas-page {
             margin-left: 20px !important;
             margin-right: 20px !important;
+            width: calc(100vw - 40px) !important;
         }
     }
 }
