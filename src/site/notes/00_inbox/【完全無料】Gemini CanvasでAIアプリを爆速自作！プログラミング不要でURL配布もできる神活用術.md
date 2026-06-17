@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/gemini-canvas-ai-url/","tags":["AI","ノーコード","自動化","生産性向上"],"created":"2026-06-18T05:38:14.698+09:00","dg-note-properties":{"tags":["AI","ノーコード","自動化","生産性向上"]}}
+{"dg-publish":true,"permalink":"/00-inbox/gemini-canvas-ai-url/","tags":["AI","ノーコード","自動化","生産性向上","Web開発","ツール紹介"],"created":"2026-06-18T05:38:14.698+09:00","dg-note-properties":{"tags":["AI","ノーコード","自動化","生産性向上","Web開発","ツール紹介"]}}
 ---
 
 
