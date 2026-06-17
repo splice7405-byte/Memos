@@ -10,7 +10,7 @@ body {
     .filetree-sidebar h1 {
         font-size: 0 !important; /* 元の文字を消す */
         &::after {
-            content: "My Knowledge"; 
+            content: "Interest Archive"; 
             font-size: var(--dg-filetree-title-size); /* サイズを復元 */
             color: var(--text-normal);
             display: block;
