@@ -4,47 +4,82 @@ body {
       IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
    ***/
 
-    /* ==========================================
-       1. 左上の「Digital Garden」のタイトルを変更する
-       ========================================== */
+    /* ========================================================
+       1. 左上の「Digital Garden」のタイトル変更
+       ======================================================== */
     .navbar-inner h1, 
     .filetree-sidebar h1 {
-        visibility: hidden; /* 元の文字を非表示にする */
+        visibility: hidden; /* 元の文字を非表示 */
         position: relative;
         
         &::after {
-            content: "My Knowledge Base"; /* ←ここを表示したい好きな名前に書き換えてください */
-            visibility: visible; /* 置き換えた文字を表示 */
+            content: "動画解説置き場"; /* ← 表示したい好きな名前に変更可能です */
+            visibility: visible;      /* 置き換えた文字を表示 */
             position: absolute;
             left: 0;
             top: 0;
             white-space: nowrap;
-            color: var(--text-normal); /* 文字色を通常テキストに合わせる */
+            color: var(--text-normal);
         }
     }
 
-    /* ==========================================
-       2. 全体のテーマ・フォント・サイズを調整する
-       ========================================== */
-    /* 全体のフォントをシステムフォントに統一して綺麗にする */
+    /* ========================================================
+       2. カラーテーマのカスタマイズ（落ち着いた炭黒ベース）
+       ======================================================== */
+    /* メインコンテンツ側の背景色（やや赤み・青みを抑えた深いグレー） */
+    --background-primary: #16161a;       
+
+    /* サイドバー・ナビゲーションバーの背景色 */
+    --background-secondary: #1f1f24;     
+
+    /* テキストの色（純白を避けて目の負担を軽減） */
+    --text-normal: #e3e8f0;             /* 本文 */
+    --text-muted: #94a3b8;              /* フォルダ名や日付など */
+
+    /* アクセントカラー（アクティブなノートやリンクの色） */
+    /* 好みに応じて、上品なゴールド・アンバー系に設定しています */
+    --text-accent: #f59e0b;       
+    --graph-main: #f59e0b;              /* グラフの接続点も連動 */
+
+    /* ========================================================
+       3. 全体のフォントとレイアウトの微調整
+       ======================================================== */
+    /* UI全体のフォントを美しく読みやすいシステムフォントに統一 */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
-    /* ノート本文の横幅を少し広く（読みやすさの向上） */
-    --dg-content-max-width: 750px; 
+    /* ノート本文の横幅を少しだけ広くしてゆとりを持たせる */
+    --dg-content-max-width: 760px; 
 
-    /* 文字サイズを少しだけ小さくしてスッキリさせる（デフォルトは18px） */
+    /* 本文の文字サイズ（デフォルトの18pxから少し下げてスッキリと） */
     --dg-content-font-size: 16px;  
 
-    /* リンクやアクティブな項目（アクセントカラー）の色を変えたい場合 */
-    /* 必要に応じて以下のカラーコード（#4f46e5など）を好きな色に変えてください */
-    --text-accent: #4f46e5;       
-    --graph-main: #4f46e5;
+    /* ========================================================
+       4. 画面幅に応じた左サイドバー（ファイルツリー）の自動非表示化
+       ======================================================== */
+    /* iPadの横向き（1400px以下）などの環境で、左バーを固定せず自動で隠す */
+    @media (max-width: 1400px) {
+        .filetree-wrapper {
+            /* 普段は左側に隠しておく（ Alpine.js 側の制御とバッティングしないよう調整 ） */
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+        }
 
-    /* ==========================================
-       （参考）元からあったサンプルコード（コメント解除・調整版）
-       ========================================== */
-    // background-color: #ffffff; /* 背景を白に固定したい場合はコメントを外す */
-    // h1 {
-    //     color: #111111;
-    // }
+        /* 画面の左端にメニュー展開用のトグル（スマホ・タブレット用UI）がある場合、
+           コンテンツエリアを中央に寄せて広く使えるようにする */
+        .content {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            max-width: var(--dg-content-max-width);
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .content.canvas-page {
+            margin-left: 20px !important;
+            margin-right: 20px !important;
+        }
+    }
 }
