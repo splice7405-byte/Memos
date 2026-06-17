@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/notebook-lm-obsidian/","tags":["AI活用","知的生産性","メモ術","情報収集"],"created":"2026-06-17T07:04:48.056+09:00","dg-note-properties":{"tags":["AI活用","知的生産性","メモ術","情報収集"]}}
+{"dg-publish":true,"permalink":"/00-inbox/notebook-lm-obsidian/","tags":["AI活用","知的生産性","メモ術","情報収集","ツール連携"],"created":"2026-06-17T07:04:48.056+09:00","dg-note-properties":{"tags":["AI活用","知的生産性","メモ術","情報収集","ツール連携"]}}
 ---
 
 

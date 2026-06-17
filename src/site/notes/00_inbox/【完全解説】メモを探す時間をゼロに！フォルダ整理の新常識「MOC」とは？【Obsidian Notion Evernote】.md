@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/moc-obsidian-notion-evernote/","tags":["Obsidian","知識管理","ノート術","生産性"],"created":"2026-06-17T09:41:53.519+09:00","dg-note-properties":{"tags":["Obsidian","知識管理","ノート術","生産性"]}}
+{"dg-publish":true,"permalink":"/00-inbox/moc-obsidian-notion-evernote/","tags":["Obsidian","知識管理","ノート術","生産性","タスク管理"],"created":"2026-06-17T09:41:53.519+09:00","dg-note-properties":{"tags":["Obsidian","知識管理","ノート術","生産性","タスク管理"]}}
 ---
 
 

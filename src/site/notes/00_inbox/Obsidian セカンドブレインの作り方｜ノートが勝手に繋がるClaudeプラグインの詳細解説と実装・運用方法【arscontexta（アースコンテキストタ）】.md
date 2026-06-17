@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/obsidian-claude-arscontexta/","tags":["Obsidian","AI","セカンドブレイン","ナレッジマネジメント","ツール"],"created":"2026-06-17T10:29:10.434+09:00","dg-note-properties":{"tags":["Obsidian","AI","セカンドブレイン","ナレッジマネジメント","ツール"]}}
+{"dg-publish":true,"permalink":"/00-inbox/obsidian-claude-arscontexta/","tags":["Obsidian","AI","セカンドブレイン","ナレッジマネジメント","ツール","arscontexta","自動化"],"created":"2026-06-17T10:29:10.434+09:00","dg-note-properties":{"tags":["Obsidian","AI","セカンドブレイン","ナレッジマネジメント","ツール","arscontexta","自動化"]}}
 ---
 
 

@@ -1,7 +1,11 @@
 ---
-{"dg-publish":true,"permalink":"/01-publish/2025-obsidian-ai-smart-composer/","tags":["Obsidian","プラグイン","生成AI","Gemini","ツール"],"created":"2026-06-17T10:54:06.746+09:00","dg-note-properties":{"tags":["Obsidian","プラグイン","生成AI","Gemini","ツール"]}}
+{"dg-publish":true,"permalink":"/01-publish/2025-obsidian-ai-smart-composer/","tags":["Obsidian","プラグイン","生成AI","Gemini","ツール","automation","templater","obsidian"],"created":"2026-06-17T10:54:06.746+09:00","dg-note-properties":{"tags":["Obsidian","プラグイン","生成AI","Gemini","ツール","automation","templater","obsidian"]}}
 ---
 
+
+
+---
+**関連リンク**: [[Templater\|Templater]] [[scripts\|scripts]]
 
 
 ![YouTube動画サムネイル](https://img.youtube.com/vi/VspOkpPgE6c/maxresdefault.jpg)

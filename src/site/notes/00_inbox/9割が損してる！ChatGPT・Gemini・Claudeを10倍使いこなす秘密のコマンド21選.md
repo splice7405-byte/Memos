@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/9-chat-gpt-gemini-claude-10-21/","tags":["AI","PromptEngineering","ChatGPT","Efficiency"],"created":"2026-06-17T05:35:29.662+09:00","dg-note-properties":{"tags":["AI","PromptEngineering","ChatGPT","Efficiency"]}}
+{"dg-publish":true,"permalink":"/00-inbox/9-chat-gpt-gemini-claude-10-21/","tags":["AI","PromptEngineering","ChatGPT","Efficiency","Tips"],"created":"2026-06-17T05:35:29.662+09:00","dg-note-properties":{"tags":["AI","PromptEngineering","ChatGPT","Efficiency","Tips"]}}
 ---
 
 
