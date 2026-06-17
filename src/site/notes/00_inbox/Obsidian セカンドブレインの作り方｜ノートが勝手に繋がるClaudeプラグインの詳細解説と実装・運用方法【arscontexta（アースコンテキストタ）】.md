@@ -4,7 +4,7 @@
 
 
 
-<iframe id="yt-player" width="100%" height="400" src="https://www.youtube.com/embed/Gdzu3DDatlw?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe id="yt-player" width="100%" height="400" src="https://www.youtube-nocookie.com/embed/Gdzu3DDatlw?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 - 00:00 <https://youtu.be/Gdzu3DDatlw?t=0m0s> イントロダクション・スキルグラフとは
     - **スキルグラフの概要**

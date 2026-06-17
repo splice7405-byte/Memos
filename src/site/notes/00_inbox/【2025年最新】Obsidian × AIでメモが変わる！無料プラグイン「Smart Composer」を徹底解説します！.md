@@ -2,57 +2,45 @@
 {"dg-publish":true,"permalink":"/00-inbox/2025-obsidian-ai-smart-composer/","created":"2026-06-17T10:54:06.746+09:00","dg-note-properties":{}}
 ---
 
-# 
+
 
 ![YouTube動画サムネイル](https://img.youtube.com/vi/VspOkpPgE6c/maxresdefault.jpg)
 
-- 00:00 <https://youtu.be/VspOkpPgE6c?t=0m0s> イントロダクション
-    - 最近ローカル環境で動作するオフラインのメモツール「Obsidian」に注力している。
-    - Notion（有料版のNotion AI）と比較した際、ObsidianにはAI機能がデフォルトで足りないのが弱点だった。
-    - メモの作成、リライト、事前のリサーチにおいて現代のAIは必須ツールになりつつある。
-    - 今回は、ObsidianでもNotion AIのようにAIを快適に使えるようにする方法を紹介する。
-- 01:04 <https://youtu.be/VspOkpPgE6c?t=1m4s> 拡張機能プラグイン「Smart Composer」とは
-    - 外部の生成AIのAPIをObsidianに引っ張ってくるためのハブとなるコミュニティプラグイン「Smart Composer」を使用する。
-    - 導入手順：
-        - 左下の「設定」＞「コミュニティプラグイン」を有効化する。
-        - コミュニティプラグインの「閲覧」から「Smart Composer」を検索してインストールし、有効化する。
-    - Smart Composerの主な機能：
-        - **AIチャット機能**: ノートの右側にサイドバーとしてAIチャット画面を展開し、ChatGPTのように対話ができる。
-        - **ノートへのアクション**: 今開いているメモに対して「要約」や「タスク（ネクストアクション）の抽出」を依頼できる。
-        - **ボルトサーチ（Vault Search）**: Obsidian内のボルト（管理しているメモ全体）から情報を検索・参照してAIが回答を生成する。
-        - **MCP（Model Context Protocol）対応**: 外部のAPIやサービスを操作する仕組みにも対応している（本動画では解説省略）。
-- 03:25 <https://youtu.be/VspOkpPgE6c?t=3m25s> 実際の挙動と活用デモ
-    - 導入すると、サイドバーに「魔法の杖」のようなマジックアイコンが表示され、チャット画面が開く。
-    - デモ1：ドキュメントの要約とタスク抽出
-        - 「このドキュメントを要約して」と指示を出すだけで、内容を数行でまとめてくれる。
-        - 会議の議事録などから「ネクストアクションを箇条書きにして」と指示すると、タスクを綺麗に洗い出してくれる。
-        - ネットが繋がっていれば、MacだけでなくiPadやスマートフォンでも同様に動作するため非常に強力。
-    - デモ2：ドキュメントの書き換え機能（Apply機能）
-        - チャットで「この構成案を話し言葉に書き換えてください」と指示。
-        - AIが文章を出力した後、「Apply」ボタンを押すと、現在のノート上に変更差分がハイライト表示される。
-        - 緑色のハイライトがAIによる修正案、赤色が元の文章。
-        - 修正内容を1行ずつ確認しながら適用（Accept Incoming）できるほか、一括適用（Accept）やキャンセルも可能。
-- 07:20 <https://youtu.be/VspOkpPgE6c?t=7m20s> プラグインの設定方法
-    - 設定画面の「コミュニティプラグイン」＞「Smart Composer」から設定を行う。
-    - 大きく分けて「チャットに使うモデルの選択（Chat）」「各生成AIのAPIを設定するプロバイダー（Providers）」「利用可能なカスタムモデルの追加」の3項目で構成される。
-    - 無料である程度賢いAIモデルを使用したい場合、Googleが提供する「Gemini」が非常におすすめ。
-    - 動画内（撮影時点：2025年6月）では、最新の「Gemini 2.5 Flash Preview」を利用するための設定手順を解説する。
-- 09:18 <https://youtu.be/VspOkpPgE6c?t=9m18s> Google AI StudioでのAPIキー取得手順
-    - 開発者向けのツールである「Google AI Studio」にアクセスする（Googleアカウントでログイン可能）。
-    - 画面上部の「Get API key」をクリック。
-    - プロジェクト一覧からAPIキーを作成・表示し、生成されたコード（APIキー）をコピーする。
-    - Obsidianの「Smart Composer」設定に戻り、「Providers」内の「Gemini」の項目にある「API Key」欄にコピーした文字列を貼り付けて保存（セーブ）する。※Base URLは変更不要。
-- 10:39 <https://youtu.be/VspOkpPgE6c?t=10m39s> 最新モデル（Gemini 2.5 Flash）のカスタム追加手順
-    - デフォルトの状態だと最新モデルが選択肢に表示されない場合があるため、カスタムモデルとして手動で追加する。
-    - Google AI Studioの右上「Run settings」から、現在提供されている最新モデルの正確な「ID」と「モデル名（Model Name）」を確認する。
-        - 例：`gemini-2.5-flash-preview` などの文字列を確認。
-    - Obsidianの設定下部にある「Add Custom Model」をクリック。
-        - **Provider ID**: `gemini` を選択。
-        - **ID**: AI Studioで確認したモデルのIDを入力。
-        - **Model Name**: モデルの表示名を入力（小文字のハイフン繋ぎの正確な名前）。
-    - 入力後「Add」を押し、設定画面上部に戻って「Chat Model」と「Apply Model」のプルダウンから、今追加した最新モデルを選択すれば設定完了。
-- 14:32 <https://youtu.be/VspOkpPgE6c?t=14m32s> 生成AIを活用するマインドセットとまとめ
-    - Smart Composerを導入することで、Notion AIのように手軽に、かつローカル環境のデータを保持したまま安全にAIを活用できる。
-    - 生成AIの活用方法は人それぞれ無限にパターンが存在する。
-    - 「自分には使いこなせない」と最初から諦めるのではなく、**「困ったときにいつでも試せる環境（引き出し）」をあらかじめ作っておくこと**が今の時代に非常に重要。
-    - 具体的なプロンプトや使い方がわからない場合は、「このメモをあなた（AI）にどう質問したら上手く活用できますか？」とAI自身に運用のアイデアを聞いてみる実験の精神を持つのがおすすめ。
+
+<iframe id="yt-player" width="100%" height="400" src="https://www.youtube.com/embed/VspOkpPgE6c?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen style="margin-top: 15px;"></iframe>
+<style>img[alt="YouTube動画サムネイル"] { display: none !important; }</style>
+
+
+- 00:00 <https://youtu.be/VspOkpPgE6c?t=0m0s> 導入・動画の概要
+    - Notion AIのようにObsidianでもAIを使いたいというニーズに応える解説動画。
+    - メモの作成、リライト、リサーチにおいてAIが必須ツールになりつつある。
+- 00:59 <https://youtu.be/VspOkpPgE6c?t=0m59s> コミュニティプラグイン「Smart Composer」の導入
+    - 今回使用するプラグイン「Smart Composer」の紹介。
+    - 各種生成AIの外部APIをObsidianに引っ張ってくるためのハブとなるプラグイン。
+    - 設定の「コミュニティプラグイン」から「Smart Composer」を検索してインストール・有効化する。
+- 02:24 <https://youtu.be/VspOkpPgE6c?t=2m24s> Smart Composerでできること・機能概要
+    - ノートの右側にサイドバーとしてAIチャット画面を展開できる。
+    - 現在開いているメモに対する質問、要約、ネクストアクション（タスク）の洗い出しなどが可能。
+    - 「Vault Search（ボルトサーチ）」機能により、Obsidianで管理しているメモ全体を検索対象にできる。
+    - Macだけでなく、ネットに繋がっていればiPadやスマートフォンでも同様に動作する。
+- 05:06 <https://youtu.be/VspOkpPgE6c?t=5m6s> AIによるドキュメントの書き換え・適用（実演）
+    - メモの文章を「話し言葉に変えて」などと指示して書き換えが可能。
+    - 「Apply（アプライ）」ボタンを押すと、AIが書き換えた部分が緑、元の部分が赤のハイライトで差分表示される。
+    - 修正内容を個別に、または一括で承認（Accept）またはキャンセルできる。
+- 07:20 <https://youtu.be/VspOkpPgE6c?t=7m20s> Smart Composerの設定方法（全体像）
+    - プラグイン設定内のカテゴリー解説（使用するAIモデルの選択、各APIの設定、モデルの有効化など）。
+    - 今回は無料で使えて賢いモデルとしてGoogleの「Gemini（ジェミニ）」を使用する方針。
+- 09:19 <https://youtu.be/VspOkpPgE6c?t=9m19s> Google AI StudioでのAPIキー取得手順
+    - 「Google AI Studio」にアクセスし、Googleアカウントでログイン。
+    - 「Get API key」または「APIキーを作成」からキーを発行する。
+    - 発行されたAPIキーをコピーし、Obsidianの設定画面内「プロバイダー」のGeminiの「APIキー」項目に貼り付けて保存（セーブ）する。
+- 10:39 <https://youtu.be/VspOkpPgE6c?t=10m39s> 最新のAIモデル（Gemini 2.5 Flash等）を追加する設定
+    - デフォルトの選択肢にない最新モデル（撮影時点のGemini 2.5 Flash Previewなど）をカスタム追加する方法。
+    - Google AI Studioの「Run Settings」から現在利用可能な最新のモデル名（IDとモデルネーム）を確認する。
+    - Obsidian側の設定下部にある「Add Custom Model」をクリック。
+    - プロバイダーに「Gemini」を選択し、確認した「ID」と「モデルネーム」をそれぞれ入力して「Add」で追加する。
+    - 最後に、設定の上部にあるチャットモデル（Chat Model）と適用モデル（Apply Model）を追加した最新モデルに変更する。
+- 14:32 <https://youtu.be/VspOkpPgE6c?t=14m32s> まとめと生成AI活用のマインドセット
+    - Obsidian内でAIを動かすメリットは、情報が「ローカル（オフライン）」に保たれる点にある。
+    - 生成AIの活用パターンは無限にあるため、「困ったときにすぐ試せる環境を作っておくこと」自体が重要。
+    - 具体的な使い方がわからない場合は、AIに対して「あなたをどう活用すればいいですか？」と直接質問してみるのもおすすめ。
