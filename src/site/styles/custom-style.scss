@@ -11,7 +11,7 @@ body {
     .filetree-sidebar h1 {
         font-size: 0 !important;
         &::after {
-            content: "Interest Archive"; 
+            content: "Interest Archives"; 
             font-size: var(--dg-filetree-title-size);
             color: var(--text-normal);
             display: block;
@@ -20,7 +20,7 @@ body {
     .navbar-inner h1 {
         font-size: 0 !important;
         &::after {
-            content: "My Knowledge"; 
+            content: "Interest Archives"; 
             font-size: var(--dg-navbar-title-size-mobile);
             color: var(--text-normal);
             display: block;
