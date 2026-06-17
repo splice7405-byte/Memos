@@ -3,11 +3,48 @@ body {
       ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
       IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
    ***/
-    //  background-color: white;
-    //  .content {
-    //   font-size: 14px;
-    //  }
-    //  h1 {
-    //   color: black;
-    //  }
+
+    /* ==========================================
+       1. 左上の「Digital Garden」のタイトルを変更する
+       ========================================== */
+    .navbar-inner h1, 
+    .filetree-sidebar h1 {
+        visibility: hidden; /* 元の文字を非表示にする */
+        position: relative;
+        
+        &::after {
+            content: "My Knowledge Base"; /* ←ここを表示したい好きな名前に書き換えてください */
+            visibility: visible; /* 置き換えた文字を表示 */
+            position: absolute;
+            left: 0;
+            top: 0;
+            white-space: nowrap;
+            color: var(--text-normal); /* 文字色を通常テキストに合わせる */
+        }
+    }
+
+    /* ==========================================
+       2. 全体のテーマ・フォント・サイズを調整する
+       ========================================== */
+    /* 全体のフォントをシステムフォントに統一して綺麗にする */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    /* ノート本文の横幅を少し広く（読みやすさの向上） */
+    --dg-content-max-width: 750px; 
+
+    /* 文字サイズを少しだけ小さくしてスッキリさせる（デフォルトは18px） */
+    --dg-content-font-size: 16px;  
+
+    /* リンクやアクティブな項目（アクセントカラー）の色を変えたい場合 */
+    /* 必要に応じて以下のカラーコード（#4f46e5など）を好きな色に変えてください */
+    --text-accent: #4f46e5;       
+    --graph-main: #4f46e5;
+
+    /* ==========================================
+       （参考）元からあったサンプルコード（コメント解除・調整版）
+       ========================================== */
+    // background-color: #ffffff; /* 背景を白に固定したい場合はコメントを外す */
+    // h1 {
+    //     color: #111111;
+    // }
 }
