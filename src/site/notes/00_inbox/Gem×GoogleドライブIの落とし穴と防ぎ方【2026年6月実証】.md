@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/gem-google-i-2026-6/","created":"2026-06-18T04:48:24.442+09:00","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/00-inbox/gem-google-i-2026-6/","tags":["AI","GoogleDrive","Gemini","DX","業務効率化"],"created":"2026-06-18T04:48:24.442+09:00","dg-note-properties":{"tags":["AI","GoogleDrive","Gemini","DX","業務効率化"]}}
 ---
 
 
@@ -35,3 +35,6 @@
 - 11:10 <https://youtu.be/3Dy0ntRz7jc?t=11m10s> まとめとコミュニティの案内
     - AIを実際の経営や実務に深く組み込んでいくためには、ツールの便利さだけでなく、このような挙動の裏側にある仕様の落とし穴を深く理解する必要がある。
     - YouTubeでは話しきれない実際の運用ノウハウや最新の実証データについては、概要欄の経営者向けコミュニティ等で生放送やディスカッションを交えて深めている。
+
+---
+**関連リンク**: [[Gemini\|Gemini]] [[Googleドライブ\|Googleドライブ]] [[AIエージェント\|AIエージェント]] [[プロンプトエンジニアリング\|プロンプトエンジニアリング]] [[データ連携\|データ連携]]
