@@ -1,8 +1,6 @@
-import { NextResponse } from 'next/server';
-
 export const config = {
-  // すべてのページ（画像等を除く）にこの認証ロジックを適用
-  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+  // 認証を適用するページ（画像やファビコン、CSSなどの拡張子付きファイルは除外する設定）
+  matcher: ['/((?!.*\\.).*)'],
 };
 
 export function middleware(req) {
@@ -14,26 +12,25 @@ export function middleware(req) {
   if (basicAuth) {
     try {
       const authValue = basicAuth.split(' ')[1];
-      // デコード時に日本語や特殊文字でエラーが出ないよう安全に処理
+      // デコード処理
       const decoded = atob(authValue);
       const [user, pwd] = decoded.split(':');
 
-      // 【条件判定】
-      // 1. ユーザー名（ID）が空欄であること
-      // 2. パスワードが一致していること
+      // 【条件判定】IDが空欄、かつパスワードが一致
       if (user === '' && pwd === CORRECT_PASSWORD) {
-        return NextResponse.next(); // 認証成功、ページを表示
+        // 認証成功：何も返さずに処理をスルーさせることで、通常のページが表示されます
+        return;
       }
     } catch (e) {
-      // デコードエラーなどが起きた場合も念のため弾く
+      // デコードエラーなどの対策
     }
 
-    // 認証情報があるが、条件を満たさない（IDが入っている or パスワード間違い）場合はGoogleへ転送
-    return NextResponse.redirect('https://www.google.com');
+    // 条件を満たさない（IDが入力されている or パスワード間違い）場合はGoogleへ転送
+    return Response.redirect('https://www.google.com', 307);
   }
 
-  // 最初のアクセス時（まだ何も入力していない時）は、認証ポップアップを出す
-  return new NextResponse('Authentication Required', {
+  // 最初のアクセス時は認証ポップアップを要求
+  return new Response('Authentication Required', {
     status: 401,
     headers: {
       'WWW-Authenticate': 'Basic realm="Secure Area"',
