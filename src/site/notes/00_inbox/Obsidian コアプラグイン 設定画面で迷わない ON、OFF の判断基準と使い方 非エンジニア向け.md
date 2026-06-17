@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/obsidian-on-off/","tags":["Obsidian","プラグイン","生産性","ライフハック","ツール設定"],"created":"2026-06-17T05:17:19.568+09:00","dg-note-properties":{"tags":["Obsidian","プラグイン","生産性","ライフハック","ツール設定"]}}
+{"dg-publish":true,"permalink":"/00-inbox/obsidian-on-off/","tags":["Obsidian","プラグイン","生産性","ライフハック","ツール設定","gardenEntry"],"created":"2026-06-17T05:17:19.568+09:00","dg-note-properties":{"tags":["Obsidian","プラグイン","生産性","ライフハック","ツール設定","gardenEntry"]}}
 ---
 
 
