@@ -1,9 +1,16 @@
-export const config = {
-  // 認証を適用するページ（画像やファビコン、CSSなどの拡張子付きファイルは除外する設定）
-  matcher: ['/((?!.*\\.).*)'],
-};
+// config と matcher を完全に削除し、すべてのアクセスを強制的にキャッチします
 
 export function middleware(req) {
+  const url = new URL(req.url);
+
+  // 【超重要】画像やスタイルシート、faviconなどのファイルを認証から除外する（これらを弾くとサイトが崩れるため）
+  if (
+    url.pathname.includes('.') || 
+    url.pathname.startsWith('/_next')
+  ) {
+    return;
+  }
+
   const basicAuth = req.headers.get('authorization');
 
   // 環境変数からパスワードを取得（未設定ならデフォルト値 'mypassword'）
@@ -12,20 +19,18 @@ export function middleware(req) {
   if (basicAuth) {
     try {
       const authValue = basicAuth.split(' ')[1];
-      // デコード処理
       const decoded = atob(authValue);
       const [user, pwd] = decoded.split(':');
 
       // 【条件判定】IDが空欄、かつパスワードが一致
       if (user === '' && pwd === CORRECT_PASSWORD) {
-        // 認証成功：何も返さずに処理をスルーさせることで、通常のページが表示されます
-        return;
+        return; // 認証成功：ページを表示
       }
     } catch (e) {
-      // デコードエラーなどの対策
+      // エラー対策
     }
 
-    // 条件を満たさない（IDが入力されている or パスワード間違い）場合はGoogleへ転送
+    // 条件を満たさない（ID入力あり or パスワード間違い）ならGoogleへ転送
     return Response.redirect('https://www.google.com', 307);
   }
 
