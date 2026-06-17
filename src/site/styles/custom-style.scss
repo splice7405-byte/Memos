@@ -68,11 +68,10 @@ body {
             background-color: var(--background-secondary) !important;
         }
 
-        /* ★ここを追加：中身の文字や検索バーの幅制限を解除し、枠いっぱいに広げる */
         .filetree-sidebar {
             width: 100% !important;
             max-width: none !important;
-            padding-right: 20px !important; /* スクロールバーや右端との隙間を確保 */
+            padding-right: 20px !important; 
         }
 
         .filetree-wrapper:hover,
@@ -90,33 +89,30 @@ body {
     }
 
     /* ========================================================
-       5. 【最終版】動画プレイヤーの追従と絶対比率維持（iPad対応）
+       5. 【最終解決版】動画プレイヤーの追従と比率維持
        ======================================================== */
     .custom-video-wrapper {
         position: relative;
         width: 100%;
-        /* ★高さ制限(max-height)をなくし、シンプルに16:9の比率だけを命令 */
-        aspect-ratio: 16 / 9; 
         margin-bottom: 2rem;
-        background-color: #000; 
         z-index: 1; 
         transition: all 0.3s ease;
+        /* 余計な黒背景(#000)や高さ指定、アスペクト比指定をすべて撤廃しました */
     }
 
-    /* ★絶対配置(absolute)を使わず、素直に枠いっぱいに広げるだけ */
+    /* ★動画自身に直接「横幅100%」と「16:9」を強制命令します */
     .custom-video-wrapper iframe {
-        width: 100%;
-        height: 100%;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9 !important;
         border: none;
         display: block;
     }
 
     .custom-video-wrapper.is-sticky {
         position: sticky;
-        /* ナビバーとの隙間。必要なら70pxなどに微調整してください */
         top: 60px; 
         box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.8); 
-        /* 追従時もアスペクト比が狂わないよう、paddingはあえて削除しました */
     }
 
     .video-pin-btn {
@@ -142,7 +138,6 @@ body {
     .video-pin-btn:active {
         transform: scale(0.9);
     }
-
 
     /* ========================================================
        6. サイドバーのファイル名・フォルダ名の文字サイズ拡大
