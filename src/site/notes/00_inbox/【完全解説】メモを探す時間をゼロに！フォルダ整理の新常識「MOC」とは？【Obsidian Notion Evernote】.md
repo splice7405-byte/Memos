@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/moc-obsidian-notion-evernote/","created":"2026-06-17T09:41:53.519+09:00","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/00-inbox/moc-obsidian-notion-evernote/","tags":["Obsidian","知識管理","ノート術","生産性"],"created":"2026-06-17T09:41:53.519+09:00","dg-note-properties":{"tags":["Obsidian","知識管理","ノート術","生産性"]}}
 ---
 
 
@@ -50,3 +50,6 @@
 - 19:12 <https://youtu.be/WxbsNbZot_M?t=19m12s> アフタートーク
     - MOC（Map of Contents）は海外のNick Milo（ニック・マイロ）氏が提唱した概念。
     - 海外のObsidianコミュニティの活発さや、今後の海外展開への展望について。
+
+---
+**関連リンク**: [[MOC\|MOC]] [[Map of Contents\|Map of Contents]] [[ナレッジマネジメント\|ナレッジマネジメント]] [[リンク基盤\|リンク基盤]] [[脱フォルダ管理\|脱フォルダ管理]] [[知識のネットワーク\|知識のネットワーク]]

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/2025-obsidian-ai-smart-composer/","created":"2026-06-17T10:54:06.746+09:00","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/00-inbox/2025-obsidian-ai-smart-composer/","tags":["Obsidian","プラグイン","生成AI","Gemini","ツール"],"created":"2026-06-17T10:54:06.746+09:00","dg-note-properties":{"tags":["Obsidian","プラグイン","生成AI","Gemini","ツール"]}}
 ---
 
 
@@ -45,3 +45,6 @@
     - 生成AIの活用パターンは無限にあるため、「困ったときにすぐ試せる環境を作っておくこと」自体が重要。
     - 具体的な使い方がわからない場合は、AIに対して「あなたをどう活用すればいいですか？」と直接質問してみるのもおすすめ。
     
+
+---
+**関連リンク**: [[Smart Composer\|Smart Composer]] [[Obsidian\|Obsidian]] [[Gemini\|Gemini]] [[AI\|AI]] [[API\|API]] [[Google AI Studio\|Google AI Studio]]

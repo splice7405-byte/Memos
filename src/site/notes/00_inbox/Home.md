@@ -1,7 +1,11 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/home/","tags":["gardenEntry"],"created":"2026-06-16T20:59:07.430+09:00","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/00-inbox/home/","tags":["サイト運営","Gemini","動画活用","gardenEntry"],"created":"2026-06-16T20:59:07.430+09:00","dg-note-properties":{"tags":["サイト運営","Gemini","動画活用","gardenEntry"]}}
 ---
 
 このサイトは私が興味のある動画をGeminiでタイムスタンプ付きのページに書き直して、表示しているものです。
 意図なく開いた場合は、ブラウザバックしてください。
 不定期更新です。
+
+
+---
+**関連リンク**: [[動画まとめ\|動画まとめ]] [[タイムスタンプ\|タイムスタンプ]] [[ブログ\|ブログ]]

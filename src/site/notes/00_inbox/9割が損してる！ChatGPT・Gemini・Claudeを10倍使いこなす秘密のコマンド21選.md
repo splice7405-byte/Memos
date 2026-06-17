@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/9-chat-gpt-gemini-claude-10-21/","created":"2026-06-17T05:35:29.662+09:00","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/00-inbox/9-chat-gpt-gemini-claude-10-21/","tags":["AI","PromptEngineering","ChatGPT","Efficiency"],"created":"2026-06-17T05:35:29.662+09:00","dg-note-properties":{"tags":["AI","PromptEngineering","ChatGPT","Efficiency"]}}
 ---
 
 
@@ -72,3 +72,6 @@
 	- 英語由来のコードであるため、日本語で普通に指示した方が早い場合もあるが、単なる直訳以上の細かいニュアンスが含まれているため、辞書登録して活用するのがおすすめ。
 - 07:32 <https://youtu.be/I79ZNfhkZDE?t=7m32s> エンディング・アフタートーク
 	- AIに考えさせたマニマニトーク（コンビニのカステラの罠について）。
+
+---
+**関連リンク**: [[プロンプトエンジニアリング\|プロンプトエンジニアリング]] [[AI活用術\|AI活用術]] [[生成AI\|生成AI]] [[ショートカット\|ショートカット]] [[業務効率化\|業務効率化]]

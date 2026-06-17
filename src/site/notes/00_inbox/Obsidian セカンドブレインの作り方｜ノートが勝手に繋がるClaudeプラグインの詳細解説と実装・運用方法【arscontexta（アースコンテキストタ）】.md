@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/obsidian-claude-arscontexta/","created":"2026-06-17T10:29:10.434+09:00","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/00-inbox/obsidian-claude-arscontexta/","tags":["Obsidian","AI","セカンドブレイン","ナレッジマネジメント","ツール"],"created":"2026-06-17T10:29:10.434+09:00","dg-note-properties":{"tags":["Obsidian","AI","セカンドブレイン","ナレッジマネジメント","ツール"]}}
 ---
 
 
@@ -41,3 +41,6 @@
     - 大量にある既存ノートの一括取り込み（バッチ処理）の具体的手順は次回の動画で解説。
 - 22:36 <https://youtu.be/Gdzu3DDatlw?t=22m36s> エンディング＆まとめ
     - arscontextaを導入することで、ただのノート置き場だったObsidianが「書けば書くほどAIが賢くなる本物のセカンドブレイン」へと循環し始める。
+
+---
+**関連リンク**: [[arscontexta\|arscontexta]] [[Claude Code\|Claude Code]] [[ナレッジグラフ\|ナレッジグラフ]] [[アトミックノート\|アトミックノート]] [[Obsidian活用術\|Obsidian活用術]]

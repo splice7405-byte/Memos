@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/notebook-lm-obsidian/","created":"2026-06-17T07:04:48.056+09:00","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/00-inbox/notebook-lm-obsidian/","tags":["AI活用","知的生産性","メモ術","情報収集"],"created":"2026-06-17T07:04:48.056+09:00","dg-note-properties":{"tags":["AI活用","知的生産性","メモ術","情報収集"]}}
 ---
 
 
@@ -46,3 +46,6 @@
 	- **結論**：NotebookLMを「情報のフィルター」や「問いをブラッシュアップする壁打ち相手」として使い、最終的にObsidianへ自分の言葉でストックしていくのが最強の知的生産術である。
 - 22:38 <https://youtu.be/KqfRakuu9FQ?t=22m38s> おまけ（NGシーン）
 	- ホワイトボード解説の際、お気に入りの洋服（買って3週間）の袖にホワイトボードのインクがべったり付いてしまっていたことに後から気づく一幕。
+
+---
+**関連リンク**: [[NotebookLM\|NotebookLM]] [[Obsidian\|Obsidian]] [[ナレッジマネジメント\|ナレッジマネジメント]] [[インプットとアウトプット\|インプットとアウトプット]] [[知識管理\|知識管理]]
