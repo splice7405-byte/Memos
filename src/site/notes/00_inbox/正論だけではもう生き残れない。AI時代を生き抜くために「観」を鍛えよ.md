@@ -1,6 +1,7 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/ai/","tags":["AI","自己啓発","思考法","ナレッジマネジメント"],"created":"2026-06-17T10:46:10.027+09:00","dg-note-properties":{"tags":["AI","自己啓発","思考法","ナレッジマネジメント"]}}
+{"dg-publish":true,"permalink":"/00-inbox/ai/","tags":["AI","自己啓発","思考法","ナレッジマネジメント","言語化","意思決定"],"created":"2026-06-17T10:46:10.027+09:00","dg-note-properties":{"tags":["AI","自己啓発","思考法","ナレッジマネジメント","言語化","意思決定"]}}
 ---
+
 
 
 
