@@ -81,10 +81,15 @@ body {
             box-shadow: 20px 0 50px rgba(0, 0, 0, 0.9) !important; 
         }
 
+        /* ★横置き時の本文の配置と幅 */
         .content {
-            margin-left: 35px !important; 
-            margin-right: auto !important;
+            margin-left: auto !important;   /* 左の余白を自動計算 */
+            margin-right: auto !important;  /* 右の余白を自動計算（左右autoで完璧な中央揃えになります） */
             max-width: 1000px !important; 
+            
+            /* 画面が狭くなった時に、左の「取っ手」と文字が被らないための安全バリア */
+            padding-left: 40px !important;  
+            padding-right: 20px !important;
         }
     }
 
