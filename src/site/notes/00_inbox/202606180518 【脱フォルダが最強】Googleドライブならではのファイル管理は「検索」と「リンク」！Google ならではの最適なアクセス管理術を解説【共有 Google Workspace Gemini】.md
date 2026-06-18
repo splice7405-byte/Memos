@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/202606180518-google-google-google-workspace-gemini/","tags":["GoogleDrive","生産性","ファイル管理","DX"],"created":"2026-06-18T17:18:51.804+09:00","dg-note-properties":{"tags":["GoogleDrive","生産性","ファイル管理","DX"]}}
+{"dg-publish":true,"permalink":"/00-inbox/202606180518-google-google-google-workspace-gemini/","tags":["GoogleDrive","生産性","ファイル管理","DX","仕事術","時短"],"created":"2026-06-18T17:18:51.804+09:00","dg-note-properties":{"tags":["GoogleDrive","生産性","ファイル管理","DX","仕事術","時短"]}}
 ---
 
 

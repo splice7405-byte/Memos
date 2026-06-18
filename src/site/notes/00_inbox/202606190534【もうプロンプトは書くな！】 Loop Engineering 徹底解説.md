@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/202606190534-loop-engineering/","tags":["AI","エンジニアリング","自動化","エージェント"],"created":"2026-06-19T05:34:16.224+09:00","dg-note-properties":{"tags":["AI","エンジニアリング","自動化","エージェント"]}}
+{"dg-publish":true,"permalink":"/00-inbox/202606190534-loop-engineering/","tags":["AI","エンジニアリング","自動化","エージェント","ループエンジニアリング"],"created":"2026-06-19T05:34:16.224+09:00","dg-note-properties":{"tags":["AI","エンジニアリング","自動化","エージェント","ループエンジニアリング"]}}
 ---
 
 
