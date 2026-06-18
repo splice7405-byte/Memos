@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/00-inbox/202606190621-obsidian-ai-obsidian-bases/","created":"2026-06-19T06:22:27.571+09:00","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/00-inbox/202606190621-obsidian-ai-obsidian-bases/","tags":["Obsidian","AI","データベース","効率化","ツール"],"created":"2026-06-19T06:22:27.571+09:00","dg-note-properties":{"tags":["Obsidian","AI","データベース","効率化","ツール"]}}
 ---
 
 
@@ -46,3 +46,6 @@
     - 高速かつ軽量なデータベースをObsidian内に構築し、自分だけの最強の右腕（ナレッジベース）を作ろう。
 - 12:52 <https://youtu.be/2zFNBSnTscc?t=12m52s> おまけ（シュト君トーク）
     - 聞き手のシュト君に対する視聴者からの心配・応援コメントの紹介。
+
+---
+**関連リンク**: [[Obsidian Bases\|Obsidian Bases]] [[AIエージェント\|AIエージェント]] [[Cloudian\|Cloudian]] [[ナレッジマネジメント\|ナレッジマネジメント]] [[YAML\|YAML]] [[2ホップリンク\|2ホップリンク]]
