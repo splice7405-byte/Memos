@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINE風チャット</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { margin: 0; background-color: #7f99be; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .message-bubble { 
+            opacity: 0; 
+            transform: translateY(10px); 
+            transition: all 0.3s ease-out; 
+            word-break: break-word; 
+        }
+        .message-bubble.show { opacity: 1; transform: translateY(0); }
+        .chat-container::-webkit-scrollbar { width: 5px; }
+        .chat-container::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 10px; }
+        .chat-image { border-radius: 12px; max-width: 200px; max-height: 200px; object-fit: cover; }
+    </style>
+</head>
+<body class="flex flex-col h-screen overflow-hidden">
+
+    <div id="chat-container" class="chat-container flex-1 overflow-y-auto p-4 space-y-4 pb-20">
+        <div id="messages" class="flex flex-col gap-4"></div>
+    </div>
+
+    <!-- 下部入力エリア -->
+    <div class="fixed bottom-0 w-full h-[50px] bg-[#1a1a1a] flex items-center px-4 gap-3 text-gray-400 border-t border-gray-800">
+        <span class="text-2xl">+</span>
+        <span class="text-xl">📷</span>
+        <span class="text-xl">🖼️</span>
+        <div class="flex-1 bg-[#2c2c2c] h-8 rounded-full px-4 flex items-center text-sm">Aa</div>
+        <span class="text-xl">☺︎</span>
+    </div>
+
+    <script>
+        const defaultData = `1,1,left,妹尾香津裕,ありがとうございます😊,17:31
+2,1,right,,電気復旧しました。SAKURAの確認をしたら、もう一度連絡します。,17:30
+3,2,right,,SAKURAも行けました。,17:34
+4,2,left,妹尾香津裕,よかったですね。ありがとうございました😊,17:35`;
+
+        const MAX_READERS = 1; // 1対1のトークを想定
+
+        function incrementReadCount() {
+            const readElements = document.querySelectorAll('.read-count');
+            readElements.forEach(el => {
+                let current = parseInt(el.textContent.replace('既読 ', '')) || 0;
+                if (current < MAX_READERS) {
+                    current++;
+                    // 今回は1対1なので、数値を出さずに「既読」だけ表示する設定にします
+                    el.textContent = `既読`; 
+                }
+            });
+        }
+
+        async function renderChat(csvText) {
+            const container = document.getElementById('messages');
+            const scrollContainer = document.getElementById('chat-container');
+            const rows = csvText.trim().split('\n').filter(r => r.trim() !== '');
+
+            for (const row of rows) {
+                // カンマ区切りですが、テキスト内にカンマがある場合を考慮した簡単な分割
+                const firstComma = row.indexOf(',');
+                const secondComma = row.indexOf(',', firstComma + 1);
+                const thirdComma = row.indexOf(',', secondComma + 1);
+                const fourthComma = row.indexOf(',', thirdComma + 1);
+                const lastComma = row.lastIndexOf(',');
+
+                // もしフォーマット通りでなければスキップ
+                if(firstComma === -1 || lastComma === -1) continue;
+
+                const parts = row.split(',');
+                const sender = parts[2];
+                const name = parts[3];
+                const time = parts[parts.length - 1];
+                const delayStr = parts[1];
+                
+                // テキスト部分は、4つ目のカンマと最後のカンマの間を全て結合
+                let text = parts.slice(4, -1).join(',');
+
+                const delayMs = isNaN(parseInt(delayStr)) ? 1500 : parseInt(delayStr) * 1000;
+                await new Promise(r => setTimeout(r, delayMs));
+
+                if (sender === 'left') incrementReadCount();
+
+                const isLeft = sender === 'left';
+                const wrapper = document.createElement('div');
+                wrapper.className = `flex ${isLeft ? 'justify-start' : 'justify-end'} items-start`; // align-startに変更
+
+                // アイコン
+                if (isLeft) {
+                    wrapper.innerHTML += `<div class="w-9 h-9 rounded-full bg-gray-300 mr-2 mt-1 flex-shrink-0 flex items-center justify-center text-sm overflow-hidden"><img src="https://api.dicebear.com/7.x/avataaars/svg?seed=${name}" alt="icon" class="w-full h-full"></div>`;
+                }
+
+                const bubbleBox = document.createElement('div');
+                bubbleBox.className = `flex flex-col ${isLeft ? 'items-start' : 'items-end'} max-w-[75%]`;
+
+                // 名前
+                if (isLeft && name) bubbleBox.innerHTML += `<span class="text-[11px] text-white mb-1 ml-1 opacity-80">${name}</span>`;
+
+                // 吹き出し（画像かテキストか判定）
+                const bubble = document.createElement('div');
+                bubble.className = "message-bubble";
+
+                if (text.startsWith('img:')) {
+                    // 画像の場合
+                    const imgUrl = text.replace('img:', '').trim();
+                    bubble.innerHTML = `<img src="${imgUrl}" class="chat-image shadow-sm" alt="image">`;
+                } else {
+                    // 通常テキストの場合
+                    bubble.className += ` px-3 py-2 text-[14px] leading-snug shadow-sm ${
+                        isLeft ? "bg-white text-black rounded-2xl rounded-tl-md" : "bg-[#8cf04e] text-black rounded-2xl rounded-tr-md"
+                    }`;
+                    bubble.textContent = text;
+                }
+                
+                bubbleBox.appendChild(bubble);
+
+                // 既読と時間
+                const infoDiv = document.createElement('div');
+                infoDiv.className = `flex flex-col ${isLeft ? 'items-start ml-1' : 'items-end mr-1'} justify-end pb-1`;
+                
+                if (!isLeft) {
+                    const readSpan = document.createElement('span');
+                    readSpan.className = "read-count text-[10px] text-gray-600 font-bold opacity-80 leading-none mb-[2px]";
+                    infoDiv.appendChild(readSpan);
+                }
+                
+                if (time) infoDiv.innerHTML += `<span class="text-[10px] text-gray-600 opacity-80 leading-none">${time}</span>`;
+                
+                // 吹き出しと時間を横並びにするためのラッパー
+                const contentWrapper = document.createElement('div');
+                contentWrapper.className = `flex items-end gap-1`;
+                
+                if (isLeft) {
+                    contentWrapper.appendChild(bubbleBox);
+                    contentWrapper.appendChild(infoDiv);
+                } else {
+                    contentWrapper.appendChild(infoDiv);
+                    contentWrapper.appendChild(bubbleBox);
+                }
+
+                wrapper.appendChild(contentWrapper);
+                container.appendChild(wrapper);
+                
+                setTimeout(() => bubble.classList.add('show'), 50);
+                scrollContainer.scrollTop = scrollContainer.scrollHeight;
+            }
+        }
+
+        window.onload = async () => {
+            const params = new URLSearchParams(window.location.search);
+            const csvUrl = params.get('csv');
+
+            if (csvUrl) {
+                try {
+                    const response = await fetch(csvUrl);
+                    if (response.ok) {
+                        const text = await response.text();
+                        renderChat(text);
+                        return;
+                    }
+                } catch (e) {
+                    console.error("CSV load error", e);
+                }
+            }
+            renderChat(defaultData);
+        };
+    </script>
+</body>
+</html>
