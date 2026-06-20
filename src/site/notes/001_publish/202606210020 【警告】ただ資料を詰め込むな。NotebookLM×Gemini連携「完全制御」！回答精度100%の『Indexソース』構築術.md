@@ -4,8 +4,6 @@
 
 
 
-![YouTube動画サムネイル](https://img.youtube.com/vi/ZB-spUUZB3o/maxresdefault.jpg)
-    
     
     <iframe id="yt-player" width="100%" height="400" src="https://www.youtube.com/embed/ZB-spUUZB3o?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen style="margin-top: 15px;"></iframe>
     <style>img[alt="YouTube動画サムネイル"] { display: none !important; }</style>
