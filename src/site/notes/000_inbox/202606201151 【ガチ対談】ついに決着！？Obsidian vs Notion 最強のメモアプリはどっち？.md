@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/000-inbox/202606201151-obsidian-vs-notion/","tags":["ツール比較","知識管理","生産性向上"],"created":"2026-06-20T11:51:59.643+09:00","dg-note-properties":{"tags":["ツール比較","知識管理","生産性向上"]}}
+{"dg-publish":true,"permalink":"/000-inbox/202606201151-obsidian-vs-notion/","tags":["ツール比較","知識管理","生産性向上","メモ術"],"created":"2026-06-20T11:51:59.643+09:00","dg-note-properties":{"tags":["ツール比較","知識管理","生産性向上","メモ術"]}}
 ---
 
 
