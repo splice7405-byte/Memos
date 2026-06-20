@@ -53,4 +53,4 @@
     
 
 ---
-**関連リンク**: [[Smart Composer\|Smart Composer]] [[Obsidian\|Obsidian]] [[Gemini\|Gemini]] [[AI\|AI]] [[API\|API]] [[Google AI Studio\|Google AI Studio]]
+**関連リンク**: [[Smart Composer\|Smart Composer]] [[Obsidian\|Obsidian]] [[Gemini_Logs\|Gemini_Logs]] [[AI\|AI]] [[API\|API]] [[Google AI Studio\|Google AI Studio]]

@@ -43,4 +43,4 @@
 
 
 ---
-**関連リンク**: [[Google Drive\|Google Drive]] [[NotebookLM\|NotebookLM]] [[Gemini\|Gemini]] [[プロンプトエンジニアリング\|プロンプトエンジニアリング]] [[データ分析\|データ分析]] [[Gmail\|Gmail]] [[Googleカレンダー\|Googleカレンダー]] [[Google Chat\|Google Chat]]
+**関連リンク**: [[Google Drive\|Google Drive]] [[NotebookLM\|NotebookLM]] [[Gemini_Logs\|Gemini_Logs]] [[プロンプトエンジニアリング\|プロンプトエンジニアリング]] [[データ分析\|データ分析]] [[Gmail\|Gmail]] [[Googleカレンダー\|Googleカレンダー]] [[Google Chat\|Google Chat]]

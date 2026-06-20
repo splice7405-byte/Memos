@@ -47,4 +47,4 @@
 
 
 ---
-**関連リンク**: [[NotebookLM\|NotebookLM]] [[Gemini\|Gemini]] [[AIツール\|AIツール]] [[業務効率化\|業務効率化]]
+**関連リンク**: [[NotebookLM\|NotebookLM]] [[Gemini_Logs\|Gemini_Logs]] [[AIツール\|AIツール]] [[業務効率化\|業務効率化]]
