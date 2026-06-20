@@ -6,6 +6,7 @@
 意図なく開いた場合は、ブラウザバックしてください。
 不定期更新です。
 
+<iframe src="/line_chat.html?csv=/data.csv" width="100%" height="600" frameborder="0" style="max-width: 400px; border-radius: 12px; margin: 0 auto; display: block; background-color: #7f99be;"></iframe>
 
 
 ---
