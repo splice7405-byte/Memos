@@ -4,10 +4,12 @@
 
 
 
-    
-    <iframe id="yt-player" width="100%" height="400" src="https://www.youtube.com/embed/ZB-spUUZB3o?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen style="margin-top: 15px;"></iframe>
-    <style>img[alt="YouTube動画サムネイル"] { display: none !important; }</style>
-    
+![YouTube動画サムネイル](https://img.youtube.com/vi/ZB-spUUZB3o/maxresdefault.jpg)
+    
+    
+    <iframe id="yt-player" width="100%" height="400" src="https://www.youtube.com/embed/ZB-spUUZB3o?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen style="margin-top: 15px;"></iframe>
+    <style>img[alt="YouTube動画サムネイル"] { display: none !important; }</style>
+    
 
 - 00:00 <https://youtu.be/ZB-spUUZB3o?t=0m0s> はじめに：インデックスソースという考え方
     - ノートブックLMのビジネス活用における壁を突破する独自手法。
@@ -34,5 +36,3 @@
     - 未設定の場合は回答が要約されすぎたり、一部の情報が漏れたりする。
 - 23:01 <https://youtu.be/ZB-spUUZB3o?t=23m1s> まとめ
     - 3重の対策（インデックスソース＋命名規則＋Geminiパーソナル設定）を組み合わせることで、大量のソースを安定して運用可能。
----
-**関連リンク**: [[NotebookLM\|NotebookLM]] [[Gemini\|Gemini]] [[インデックスソース\|インデックスソース]] [[プロンプトエンジニアリング\|プロンプトエンジニアリング]] [[ハルシネーション対策\|ハルシネーション対策]] [[情報整理\|情報整理]]
